@@ -14,7 +14,10 @@ version: '3'
 services:
   redis-server:
     image: 'redis'
+    restart: on-failure
   node-app:
+    # restart policy
+    restart: on-failure
     build: .
     # a dash in a yaml file specifies an array so that we can map many
     # different ports in one place for a build
