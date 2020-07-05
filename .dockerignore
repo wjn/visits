@@ -1,0 +1,17 @@
+# Learn more about .dockerignore 
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+## Exclude all markdown files except README
+*.md
+!README.md
+
+# exclude node_modules
+node_modules
+npm-debug.log
+
+## I'm unsure if this should be included. It will be created when the docker
+## container runs npm install, so I'm going to leave it out. [wjn]
+package-lock.json
+
+# see Node.js article on dockerizing a node app
+# https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
