@@ -11,4 +11,4 @@ RUN npm install
 # copy over the rest of the app files
 COPY . .
 
-CMD ["node", "start"]
+CMD ["npm", "start"]
