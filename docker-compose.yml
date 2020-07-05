@@ -1,0 +1,22 @@
+# specify version of docker compose.
+# version 3 is the current and recommended version
+version: '3'
+
+# services = type of container
+# use the publically available redis image and
+# then build and use the image described in the Dockerfile
+# present in the root directory (.)
+#
+# By defining services together, these containers are essentially instantiated
+# on the same network automatically. All ports are mapped between containers
+# automatically. The port declaration below is mapping ports fro our local
+# machine to ports within the Docker node-app Container.
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    build: .
+    # a dash in a yaml file specifies an array so that we can map many
+    # different ports in one place for a build
+    ports:
+      - '8081:8081'
